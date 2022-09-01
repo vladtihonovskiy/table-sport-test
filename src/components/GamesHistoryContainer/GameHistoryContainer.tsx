@@ -6,7 +6,7 @@ import { useAppSelector } from "../../hooks/useAppSelector";
 export const GameHistoryContainer = () => {
   const { listOfGames } = useAppSelector((state) => state.gameStory);
   return (
-    <Box sx={{ width: 450 }}>
+    <Box sx={{ width: 500 }}>
       {listOfGames.length < 1 ? (
         <p>You need add at least 2 command to start</p>
       ) : (
@@ -15,7 +15,7 @@ export const GameHistoryContainer = () => {
             ({
               parentPoints,
               parentName,
-              gustPoints,
+              guestPoints,
               id,
               guestName,
               isPlayed,
@@ -26,7 +26,7 @@ export const GameHistoryContainer = () => {
                 guestName={guestName}
                 id={id}
                 isPlayed={isPlayed}
-                gustPoints={gustPoints}
+                guestPoints={guestPoints}
                 parentPoints={parentPoints}
               />
             )

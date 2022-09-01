@@ -4,6 +4,7 @@ import {
   GameObjectType,
   GameStoryState,
   playersObjectTypes,
+  SaveGameScorePayload,
 } from "./gameStorySlice.types";
 
 const newPlayerObjectCreator = (name: string) => ({
@@ -19,7 +20,7 @@ const newGameObjectCreator = (parentName: string, guestName: string) => ({
   id: `${parentName} ${guestName}`,
   parentName,
   guestName,
-  gustPoints: 0,
+  guestPoints: 0,
   parentPoints: 0,
   isPlayed: false,
 });
@@ -54,10 +55,30 @@ export const gameStorySlice = createSlice({
       }
       state.listOPlayers.push(newPlayerObjectCreator(action.payload));
     },
+    saveGameResult: (state, action: PayloadAction<SaveGameScorePayload>) => {
+      const { id, parentPoints, guestPoints, parentName, guestName } =
+        action.payload;
+      const updateGameIndex = state.listOfGames.findIndex(
+        (item) => item.id === id
+      );
+      state.listOfGames[updateGameIndex] = {
+        ...state.listOfGames[updateGameIndex],
+        parentPoints,
+        guestPoints,
+        isPlayed: true,
+      };
+
+      // const parentPlayerIndex = state.listOPlayers.findIndex(
+      //   (item) => item.name === parentName
+      // );
+      // const guestPlayerIndex = state.listOPlayers.findIndex(
+      //   (item) => item.name === guestName
+      // );
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { addNewPlayerName } = gameStorySlice.actions;
+export const { addNewPlayerName, saveGameResult } = gameStorySlice.actions;
 
 export default gameStorySlice.reducer;

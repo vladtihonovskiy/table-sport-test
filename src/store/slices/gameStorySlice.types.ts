@@ -12,11 +12,19 @@ export interface GameObjectType {
   parentName: string;
   guestName: string;
   parentPoints: number;
-  gustPoints: number;
+  guestPoints: number;
   isPlayed: boolean;
 }
 
 export interface GameStoryState {
   listOPlayers: playersObjectTypes[];
   listOfGames: GameObjectType[];
+}
+
+export interface SaveGameScorePayload {
+  id: string;
+  parentPoints: number;
+  guestPoints: number;
+  parentName: string;
+  guestName: string;
 }

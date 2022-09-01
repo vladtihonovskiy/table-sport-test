@@ -3,6 +3,6 @@ export default interface IGameHistoryItemProps {
   parentName: string;
   guestName: string;
   parentPoints: number;
-  gustPoints: number;
+  guestPoints: number;
   isPlayed: boolean;
 }
