@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Grid } from "@mui/material";
+import GameHistoryContainer from "../../components/GamesHistoryContainer/GameHistoryContainer";
 
 const Home = () => (
   <Container sx={{ minHeight: "100vh" }} maxWidth="xl">
@@ -11,7 +12,7 @@ const Home = () => (
       flexWrap="wrap"
       sx={{ height: "100%", paddingTop: 5 }}
     >
-      Test
+     <GameHistoryContainer />
     </Grid>
   </Container>
 );
