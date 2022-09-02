@@ -14,7 +14,7 @@ const Home = () => (
       flexWrap="wrap"
       sx={{ height: "100%", pt: 20 }}
     >
-      <Grid sx={{ width: "100%" }} md={12} lg={5}>
+      <Grid item sx={{ width: "100%" }} md={12} lg={5}>
         <AddNewPlayerNameInput />
         <TableContainer />
       </Grid>

@@ -88,8 +88,10 @@ export const GameHistoryItem: React.FC<IGameHistoryItemProps> = ({
       sx={{
         flexDirection: { sm: "row" },
         height: { xs: "auto", sm: 50 },
+        marginLeft: { xs: 0, sm: 10 },
+        marginTop: { xs: 1, sm: 0 },
+        justifyContent: { xs: "center", sm: "flex-start" },
       }}
-      justifyContent="center"
     >
       <Box sx={{ m: { xs: 0, sm: 2 }, maxWidth: 60, width: "100%" }}>
         <Typography
@@ -118,7 +120,7 @@ export const GameHistoryItem: React.FC<IGameHistoryItemProps> = ({
       {/** show only if we didn't save the result * */}
       {!isPlayed && (
         <Button
-          sx={{ width: { xs: "100%", sm: "auto" } }}
+          sx={{ width: { xs: "100%", sm: "auto" }, my: { xs: 1, sm: 0 } }}
           onClick={onSaveHandleClick}
           variant="contained"
         >
