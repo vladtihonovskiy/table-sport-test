@@ -37,7 +37,7 @@ export const GameHistoryItem: React.FC<IGameHistoryItemProps> = ({
     () => (
       <>
         <TextField
-          sx={{ maxWidth: 70, mx: 2 }}
+          sx={{ maxWidth: 70, mx: 1 }}
           size="small"
           type="number"
           disabled={isPlayed}
@@ -57,7 +57,7 @@ export const GameHistoryItem: React.FC<IGameHistoryItemProps> = ({
         />
         <p>:</p>
         <TextField
-          sx={{ maxWidth: 70, mx: 2 }}
+          sx={{ maxWidth: 70, mx: 1 }}
           size="small"
           type="number"
           disabled={isPlayed}
@@ -86,12 +86,12 @@ export const GameHistoryItem: React.FC<IGameHistoryItemProps> = ({
       container
       alignItems="center"
       sx={{
-        flexDirection: { xs: "column", md: "row" },
-        height: { xs: "auto", md: 50 },
-        my: { xs: 4, md: 0 },
+        flexDirection: { sm: "row" },
+        height: { xs: "auto", sm: 50 },
       }}
+      justifyContent="center"
     >
-      <Box sx={{ m: 2, maxWidth: 60, width: "100%" }}>
+      <Box sx={{ m: { xs: 0, sm: 2 }, maxWidth: 60, width: "100%" }}>
         <Typography
           sx={{
             overflow: "hidden",
@@ -103,7 +103,7 @@ export const GameHistoryItem: React.FC<IGameHistoryItemProps> = ({
         </Typography>
       </Box>
       {renderInputs}
-      <Box sx={{ m: 2, maxWidth: 60, width: "100%" }}>
+      <Box sx={{ m: { xs: 0, sm: 2 }, maxWidth: 60, width: "100%" }}>
         <Typography
           sx={{
             overflow: "hidden",
@@ -117,7 +117,11 @@ export const GameHistoryItem: React.FC<IGameHistoryItemProps> = ({
 
       {/** show only if we didn't save the result * */}
       {!isPlayed && (
-        <Button onClick={onSaveHandleClick} variant="contained">
+        <Button
+          sx={{ width: { xs: "100%", sm: "auto" } }}
+          onClick={onSaveHandleClick}
+          variant="contained"
+        >
           Save
         </Button>
       )}

@@ -35,15 +35,17 @@ export const AddNewPlayerNameInput = () => {
   return (
     <Grid
       container
-      direction="row"
+      direction={{ xs: "column", sm: "row" }}
       alignItems="center"
+      sx={{ justifyContent: { xs: "center", sm: "flex-start" } }}
       spacing={1}
       marginBottom={5}
     >
-      <Grid item>
+      <Grid item sx={{ width: { xs: "100%", sm: "auto" } }}>
         <TextField
           onChange={onInputHandleChange}
           size="small"
+          sx={{ width: { xs: "100%", sm: "auto" } }}
           label="New Player Name"
           onKeyPress={(event) => {
             if (event.key === "Enter") {
@@ -56,10 +58,11 @@ export const AddNewPlayerNameInput = () => {
           value={textInputValue}
         />
       </Grid>
-      <Grid item>
+      <Grid item sx={{ width: { xs: "100%", sm: "auto" } }}>
         <Button
           onClick={onAddButtonHandleClick}
           disabled={isAddButtonDisabled}
+          sx={{ width: { xs: "100%", sm: "auto" } }}
           variant="contained"
         >
           Add New

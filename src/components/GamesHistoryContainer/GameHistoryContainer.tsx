@@ -6,11 +6,11 @@ import GameHistoryItem from "../GameHistoryItem/GameHistoryItem";
 export const GameHistoryContainer = () => {
   const { listOfGames } = useAppSelector((state) => state.gameStory);
   return (
-    <Box sx={{ width: 500 }}>
+    <Box sx={{ maxWidth: 500, width: "100%" }}>
       {listOfGames.length < 1 ? (
         <p>You need add at least 2 command to start</p>
       ) : (
-        <Box pt={10}>
+        <Box sx={{ paddingTop: { xs: 5, md: 5, lg: 10 } }}>
           {listOfGames.map(
             ({
               parentPoints,
