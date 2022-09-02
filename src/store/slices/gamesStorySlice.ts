@@ -18,7 +18,7 @@ const newPlayerObjectCreator = (name: string) => ({
 });
 
 const newGameObjectCreator = (parentName: string, guestName: string) => ({
-  id: `${parentName} ${guestName}`,
+  id: `${parentName}-${guestName}`,
   parentName,
   guestName,
   guestPoints: 0,

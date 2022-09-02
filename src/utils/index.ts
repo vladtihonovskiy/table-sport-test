@@ -13,6 +13,4 @@ export const getGameStatusObject = (
   isWin: currentPlayerScore > opponentPlayerScore,
 });
 
-export const callPoints = ({}: GameStatusType) => {
-
-};
+export const callPoints = ({}: GameStatusType) => {};

@@ -5,7 +5,7 @@ import AddNewPlayerNameInput from "../../components/AddNewPlayerNameInput/AddNew
 import TableContainer from "../../components/TableContainer/TableContainer";
 
 const Home = () => (
-  <Container sx={{ minHeight: "100vh"}} maxWidth="xl">
+  <Container sx={{ minHeight: "100vh" }} maxWidth="xl">
     <Grid
       container
       direction="row"
