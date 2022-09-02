@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { addNewPlayerName } from "../../store/slices/gamesStorySlice";
 import { useAppSelector } from "../../hooks/useAppSelector";
+import { capitalizeFirstLetter } from "../../utils";
 
 export const AddNewPlayerNameInput = () => {
   const dispatch = useAppDispatch();
@@ -19,16 +20,17 @@ export const AddNewPlayerNameInput = () => {
   );
 
   const onAddButtonHandleClick = useCallback(() => {
-    if (listOPlayers.some((item) => item.name === textInputValue)) {
+    const convertedName = capitalizeFirstLetter(textInputValue.trim());
+    if (listOPlayers.some((item) => item.name === convertedName)) {
       return toast.error("You can't the add same name", {
         position: toast.POSITION.TOP_RIGHT,
       });
     }
-    dispatch(addNewPlayerName(textInputValue));
+    dispatch(addNewPlayerName(convertedName));
     return setTextInputValue("");
   }, [textInputValue]);
 
-  const isAddButtonDisabled = textInputValue.length < 3;
+  const isAddButtonDisabled = textInputValue.trim().length < 3;
 
   return (
     <Grid
