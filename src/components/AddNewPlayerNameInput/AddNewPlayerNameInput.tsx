@@ -23,7 +23,7 @@ export const AddNewPlayerNameInput = () => {
   const isAddButtonDisabled = textInputValue.length < 3;
 
   return (
-    <Grid container direction="row" alignItems="center" spacing={1}>
+    <Grid container direction="row" alignItems="center" spacing={1} marginBottom={5}>
       <Grid item>
         <TextField
           onChange={onInputHandleChange}
