@@ -24,7 +24,7 @@ class GamePoints {
     currentPlayerScore: number,
     opponentPlayerScore: number
   ) {
-    this.playerObject = {...playerObject};
+    this.playerObject = { ...playerObject };
     this.currentPlayerScore = currentPlayerScore;
     this.opponentPlayerScore = opponentPlayerScore;
 
@@ -71,7 +71,7 @@ class GamePoints {
       draw: isDraw ? oldDrawCount + 1 : oldDrawCount,
       lost: isLost ? oldLostCount + 1 : oldLostCount,
       win: isWin ? oldWinCount + 1 : oldWinCount,
-      totalPoints: oldTotalPointsCount + this.calcPoints();
+      totalPoints: oldTotalPointsCount + this.calcPoints(),
     };
   }
 }

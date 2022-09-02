@@ -6,6 +6,7 @@ import {
   playersObjectTypes,
   SaveGameScorePayload,
 } from "./gameStorySlice.types";
+import GamePoints from "../../Service/CalcPoints";
 
 const newPlayerObjectCreator = (name: string) => ({
   name,
@@ -68,12 +69,26 @@ export const gameStorySlice = createSlice({
         isPlayed: true,
       };
 
-      // const parentPlayerIndex = state.listOPlayers.findIndex(
-      //   (item) => item.name === parentName
-      // );
-      // const guestPlayerIndex = state.listOPlayers.findIndex(
-      //   (item) => item.name === guestName
-      // );
+      const parentPlayerIndex = state.listOPlayers.findIndex(
+        (item) => item.name === parentName
+      );
+
+      const guestPlayerIndex = state.listOPlayers.findIndex(
+        (item) => item.name === guestName
+      );
+
+      /** update player game info for parent  **/
+      state.listOPlayers[parentPlayerIndex] = new GamePoints(
+        state.listOPlayers[parentPlayerIndex],
+        parentPoints,
+        guestPoints
+      ).getNewPlayerObject();
+
+      state.listOPlayers[guestPlayerIndex] = new GamePoints(
+        state.listOPlayers[guestPlayerIndex],
+        guestPoints,
+        parentPoints
+      ).getNewPlayerObject();
     },
   },
 });
