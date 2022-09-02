@@ -82,15 +82,23 @@ export const GameHistoryItem: React.FC<IGameHistoryItemProps> = ({
   );
 
   return (
-    <Grid container direction="row" alignItems="center" height={50}>
-      <Box sx={{ mx: 2, maxWidth: 60, width: "100%" }}>
-        <Typography sx={{ overflow: "hidden", textOverflow: "ellipsis" }}>
+    <Grid
+      container
+      alignItems="center"
+      sx={{
+        flexDirection: { xs: "column", md: "row" },
+        height: { xs: "auto", md: 50 },
+        my: { xs: 4, md: 0 }
+      }}
+    >
+      <Box sx={{ m: 2, maxWidth: 60, width: "100%" }}>
+        <Typography sx={{ overflow: "hidden", textOverflow: "ellipsis", textAlign: 'center' }}>
           {parentName}
         </Typography>
       </Box>
       {renderInputs}
-      <Box sx={{ mx: 2, maxWidth: 60, width: "100%" }}>
-        <Typography sx={{ overflow: "hidden", textOverflow: "ellipsis" }}>
+      <Box sx={{ m: 2, maxWidth: 60, width: "100%" }}>
+        <Typography sx={{ overflow: "hidden", textOverflow: "ellipsis", textAlign: 'center' }}>
           {guestName}
         </Typography>
       </Box>

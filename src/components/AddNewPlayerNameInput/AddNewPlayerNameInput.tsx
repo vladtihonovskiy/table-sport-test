@@ -20,12 +20,12 @@ export const AddNewPlayerNameInput = () => {
 
   const onAddButtonHandleClick = useCallback(() => {
     if (listOPlayers.some((item) => item.name === textInputValue)) {
-      return toast.error("You can't add same name", {
-        position: toast.POSITION.TOP_RIGHT
+      return toast.error("You can't the add same name", {
+        position: toast.POSITION.TOP_RIGHT,
       });
     }
     dispatch(addNewPlayerName(textInputValue));
-    setTextInputValue("");
+    return setTextInputValue("");
   }, [textInputValue]);
 
   const isAddButtonDisabled = textInputValue.length < 3;
