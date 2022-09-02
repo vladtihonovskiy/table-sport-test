@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Container, Grid } from "@mui/material";
+import { Container, Grid } from "@mui/material";
 import GameHistoryContainer from "../../components/GamesHistoryContainer/GameHistoryContainer";
 import AddNewPlayerNameInput from "../../components/AddNewPlayerNameInput/AddNewPlayerNameInput";
 import TableContainer from "../../components/TableContainer/TableContainer";

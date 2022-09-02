@@ -43,7 +43,7 @@ export const GameHistoryItem: React.FC<IGameHistoryItemProps> = ({
           disabled={isPlayed}
           inputProps={{ min: 0, max: 10 }}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-            e.target.value = Math.max(0, parseInt(e.target.value))
+            e.target.value = Math.max(0, parseInt(e.target.value, 10))
               .toString()
               .slice(0, 2);
             setParentPointsInput(+e.target.value);
@@ -63,7 +63,7 @@ export const GameHistoryItem: React.FC<IGameHistoryItemProps> = ({
           disabled={isPlayed}
           inputProps={{ min: 0, max: 10 }}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-            e.target.value = Math.max(0, parseInt(e.target.value))
+            e.target.value = Math.max(0, parseInt(e.target.value, 10))
               .toString()
               .slice(0, 2);
 
@@ -88,17 +88,29 @@ export const GameHistoryItem: React.FC<IGameHistoryItemProps> = ({
       sx={{
         flexDirection: { xs: "column", md: "row" },
         height: { xs: "auto", md: 50 },
-        my: { xs: 4, md: 0 }
+        my: { xs: 4, md: 0 },
       }}
     >
       <Box sx={{ m: 2, maxWidth: 60, width: "100%" }}>
-        <Typography sx={{ overflow: "hidden", textOverflow: "ellipsis", textAlign: 'center' }}>
+        <Typography
+          sx={{
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+            textAlign: "center",
+          }}
+        >
           {parentName}
         </Typography>
       </Box>
       {renderInputs}
       <Box sx={{ m: 2, maxWidth: 60, width: "100%" }}>
-        <Typography sx={{ overflow: "hidden", textOverflow: "ellipsis", textAlign: 'center' }}>
+        <Typography
+          sx={{
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+            textAlign: "center",
+          }}
+        >
           {guestName}
         </Typography>
       </Box>

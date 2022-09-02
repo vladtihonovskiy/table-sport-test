@@ -77,7 +77,7 @@ export const gameStorySlice = createSlice({
         (item) => item.name === guestName
       );
 
-      /** update player game info for parent  **/
+      /** update player game info for parent  * */
       state.listOPlayers[parentPlayerIndex] = new GamePoints(
         state.listOPlayers[parentPlayerIndex],
         parentPoints,

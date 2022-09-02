@@ -1,7 +1,7 @@
 import React from "react";
 import { Box } from "@mui/material";
-import GameHistoryItem from "../GameHistoryItem/GameHistoryItem";
 import { useAppSelector } from "../../hooks/useAppSelector";
+import GameHistoryItem from "../GameHistoryItem/GameHistoryItem";
 
 export const GameHistoryContainer = () => {
   const { listOfGames } = useAppSelector((state) => state.gameStory);
