@@ -83,6 +83,7 @@ export const GameHistoryItem: React.FC<IGameHistoryItemProps> = ({
 
   return (
     <Grid
+      data-testid={`${id}-game-history-item`}
       container
       alignItems="center"
       sx={{

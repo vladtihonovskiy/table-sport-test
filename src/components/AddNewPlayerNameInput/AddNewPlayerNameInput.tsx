@@ -46,7 +46,8 @@ export const AddNewPlayerNameInput = () => {
           onChange={onInputHandleChange}
           size="small"
           sx={{ width: { xs: "100%", sm: "auto" } }}
-          label="New Player Name"
+          label="New Team Name"
+          inputProps={{ "data-testid": "new-team-input" }}
           onKeyPress={(event) => {
             if (event.key === "Enter") {
               event.preventDefault();

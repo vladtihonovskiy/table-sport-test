@@ -13,7 +13,7 @@ import IPlayerStatisticTableProps from "./PlayerStatisticTable.types";
 export const PlayerStatisticTable: React.FC<IPlayerStatisticTableProps> = ({
   statisticArray,
 }) => (
-  <TableContainer component={Paper}>
+  <TableContainer data-testid="table-component" component={Paper}>
     <Table aria-label="simple table">
       <TableHead>
         <TableRow>
@@ -33,7 +33,9 @@ export const PlayerStatisticTable: React.FC<IPlayerStatisticTableProps> = ({
             sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
           >
             <TableCell align="center">{index + 1}</TableCell>
-            <TableCell align="center">{row.name}</TableCell>
+            <TableCell data-testid="table-test-row-name" align="center">
+              {row.name}
+            </TableCell>
             <TableCell align="center">{row.played}</TableCell>
             <TableCell align="center">{row.win}</TableCell>
             <TableCell align="center">{row.draw}</TableCell>
