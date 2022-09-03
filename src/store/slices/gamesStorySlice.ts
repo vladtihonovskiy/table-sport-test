@@ -6,7 +6,7 @@ import {
   playersObjectTypes,
   SaveGameScorePayload,
 } from "./gameStorySlice.types";
-import GamePoints from "../../Service/CalcPoints";
+import GamePoints from "../../services/CalcPoints";
 
 const newPlayerObjectCreator = (name: string) => ({
   name,
